@@ -1,6 +1,6 @@
 ---
-title: "Nick Strayer's CV"
-author: Nick Strayer
+title: "Kyle McGillicuddy-Penna's CV"
+author: Kyle McGillicuddy-Penna
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
@@ -26,8 +26,10 @@ library(tidyverse)
 # folder in project
 using_googlesheets <- TRUE
 
+# Mask g-sheet cv link from Github as g_cv
+source('secret.R')
 # Just the copied URL from the sheet
-positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/14MQICF2F8-vf8CKPF1m4lyGKO6_thG-4aSwat1e2TWc"
+positions_sheet_loc <- g_cv
 
 # Is this sheet available for anyone to read? If you're using a private sheet
 # set this to false and go to gather_data.R and run the data loading manually
@@ -122,7 +124,7 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Nick Strayer {#title}
+Kyle McGillicuddy-Penna {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -140,89 +142,25 @@ print_section(position_data, 'education')
 
 
 
-Research Experience {data-icon=laptop}
+Experience {data-icon=laptop}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'research_positions')
+print_section(position_data, 'experience')
 ```
 
 
-
-Industry Experience {data-icon=suitcase}
---------------------------------------------------------------------------------
-
-::: aside
-```{r}
-print_text_block(text_blocks, 'industy_experience_aside')
-```
-:::
-
-```{r}
-print_section(position_data, 'industry_positions')
-```
 
 <!-- These breaks just force a new page so section doesnt get cut off -->
 <br>
 <br>
 <br>
 
-Teaching Experience {data-icon=chalkboard-teacher}
---------------------------------------------------------------------------------
-
-::: aside
-```{r}
-print_text_block(text_blocks, 'teaching_experience_aside')
-```
-:::
-
-```{r}
-print_section(position_data, 'teaching_positions')
-```
-
-
-
-Selected Data Science Writing {data-icon=chart-line}
---------------------------------------------------------------------------------
-
-::: aside
-```{r}
-print_text_block(text_blocks, 'data_science_writing_aside')
-```
-:::
-
-```{r}
-print_section(position_data, 'data_science_writings')
-```
-
-
-
-Selected Press (About)  {data-icon=newspaper}
+Skills {data-icon=book}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'about_me_press')
-```
-
-
-<br>
-<br>
-
-
-Selected Press (By)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'by_me_press')
-```
-
-
-
-Selected Publications, Posters, and Talks {data-icon=book}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'academic_articles')
+print_section(position_data, 'skill')
 ```
 
 
